@@ -15,8 +15,8 @@ This Google Apps Script automates the creation and management of job folders and
 1. Create a Google Sheet with:
    - `Info` tab (headers: Bid# | Client | TMK | Address | Status)
    - `Config` tab with:
-     - Cell A1: `ROOT_FOLDER_ID`
-     - Cell B1: `<Paste your Google Drive folder ID here>`
+     - Cell A2: `ROOT_FOLDER_ID`
+     - Cell B2: `<Paste your Google Drive folder ID here>`
 2. Open `Extensions → Apps Script`
 3. Copy the code from `MLS_Jobs_Automation.gs` into the script editor
 4. Save and install an **onEdit trigger**:

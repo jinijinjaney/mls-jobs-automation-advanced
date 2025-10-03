@@ -23,3 +23,20 @@ This Google Apps Script automates the creation and management of job folders and
    - Function: `onEdit`
    - Event type: From spreadsheet → On edit
 5. Add or update rows in the `Info` tab and the script will create/update job folders and notes.
+
+## Handling Duplicates & Deletions
+
+**Duplicate Folders**
+The script prevents duplicates by storing the Folder ID in the Info tab (column I by default).
+If a row already has a stored folder ID, the script reuses that folder instead of creating a new one.
+If the folder name changes (e.g., client name updated), the script renames the existing folder instead of duplicating it.
+
+**Duplicate Job Notes Files** 
+Inside each folder, before creating a new Job Notes.txt, the script looks for any existing file with the same name.
+If found, the old file is moved to trash.
+A new, updated Job Notes.txt is then created.
+This ensures there’s always exactly one notes file per job folder.
+
+**Deletion Safety**
+Only job notes inside the job’s folder are deleted/overwritten.
+No unrelated files or folders in Google Drive are touched.
